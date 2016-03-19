@@ -5,7 +5,7 @@ function escapeRegExp(string){
 }
 
 app.controller('listAll', function($scope, $http) {
-  var registry_url = "REGISTRY_URL";
+  var registry_url = "%REGISTRY_URL%";
   $scope.filterBySearch = function(name) {
     if (!$scope.search) return true;
     var regex = new RegExp('\\b' + escapeRegExp($scope.search), 'i');

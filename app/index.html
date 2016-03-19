@@ -23,14 +23,19 @@
   <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
-
   <div ng-controller="listAll">
     <div class="container">
-        <input type="search" class="form-control input-sm" ng-model="search" placeholder="Search..."><br>
-        <table class="table table-hover">
-            <tbody ng:repeat="i in data | filter:filterBySearch" >
-            <tr><td>{{i}}</td></tr>
-        </table>
+      <div class="row">
+        <input type="search" class="form-control input-sm" ng-model="search" placeholder="Search...">
+        <input type="button" class="btn btn-primary" value="Images list" ng-click="reloadImages()">
+      </div>
+        <br>
+      <div class="row">
+          <table class="table table-hover">
+              <tbody ng:repeat="i in data | filter:filterBySearch" >
+              <tr><td ng-click="showTags(i)" style="cursor: pointer;">{{i}}</td></tr>
+          </table>
+      </div>
     </div>
   </div>
 

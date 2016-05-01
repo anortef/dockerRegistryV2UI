@@ -1,5 +1,6 @@
 A little project to learn AngularJS while creating a little UI 
 for a docker registry V2.
 
-In order to make it work you need to put an nginx server allowing cors
-in front of your registry.
+Usage: 
+
+docker run -d -e REGISTRY_URL=http://IP_OF_YOUR_REGISTRY:5000 -p 0.0.0.0:8000:80 --name v2ui anortef/dockerregistryv2ui
